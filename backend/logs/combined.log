@@ -263,3 +263,11 @@ Unique constraint failed on the fields: (`phone`)
         Total Savings: 4.8,
         Repaid Loans Count: 0
 2025-06-18T19:55:54.986Z [INFO]: Shutting down server...
+2025-06-18T19:59:32.139Z [INFO]: Server is running on port 4000
+2025-06-18T20:00:44.011Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T20:08:53.123Z [INFO]: Shutting down server...
