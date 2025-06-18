@@ -164,7 +164,7 @@ export default function VerifierDashboard() {
             <button className="md:hidden" onClick={() => setSidebarOpen(true)}>
               <Menu size={24} className="text-green-700" />
             </button>
-            <div className="text-lg font-bold text-green-700">CREDIT Sea</div>
+            <div className="text-lg font-bold text-green-700">CREDIT SEA</div>
             <div className="flex space-x-6 text-gray-600">
               <Home
                 onClick={() => router.push("/dashboard/verifier")}

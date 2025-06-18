@@ -8,15 +8,15 @@ export default function Navbar({ setSidebarOpen }) {
   const router = useRouter();
 
   return (
-    <nav className="flex justify-between items-center bg-white p-4 shadow mb-6 relative">
+    <nav className="flex justify-between items-center bg-green-700 p-4 shadow mb-6 relative">
       <button className="md:hidden" onClick={() => setSidebarOpen(true)}>
-        <Menu size={24} className="text-green-700" />
+        <Menu size={24} className="text-white" />
       </button>
-      <div className="text-lg font-bold text-green-700">CREDIT Sea</div>
+      <div className="text-lg font-bold text-white">CREDIT SEA</div>
       <div className="flex space-x-6 text-gray-600 items-center relative">
         {/* Home Button */}
         <Home
-          className="cursor-pointer hover:text-green-700"
+          className="cursor-pointer hover:text-white"
           size={24}
           onClick={() => router.push("/dashboard/admin")}
         />
@@ -28,7 +28,7 @@ export default function Navbar({ setSidebarOpen }) {
             className="flex items-center space-x-1 cursor-pointer"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <User className="hover:text-green-700" />
+            <User className="hover:text-white" />
             <span>Admin</span>
             <ChevronDown size={16} />
           </div>
