@@ -14,6 +14,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Credit Sea Assignment. This is the backend server.');
+})
+
 app.use('/api', apiRoutes);
 
 

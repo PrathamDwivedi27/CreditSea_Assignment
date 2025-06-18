@@ -186,3 +186,56 @@ Unique constraint failed on the fields: (`phone`)
         Total Savings: 4.8,
         Repaid Loans Count: 0
 2025-06-18T18:23:43.686Z [INFO]: Shutting down server...
+2025-06-18T18:28:27.338Z [INFO]: Server is running on port 4000
+2025-06-18T18:40:12.621Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T18:40:12.622Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T18:40:13.185Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T18:40:13.188Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T18:40:13.748Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:40:14.038Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:40:40.513Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:40:40.780Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:45:35.280Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:47:29.422Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T19:05:54.028Z [INFO]: Server is running on port 4000
+2025-06-18T19:05:57.648Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:02.389Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:03.882Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:14.282Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:15.776Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:17.225Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:22.507Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:24.838Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:26.618Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:28.929Z [INFO]: Server is running on port 4000
+2025-06-18T19:06:32.310Z [INFO]: Server is running on port 4000
