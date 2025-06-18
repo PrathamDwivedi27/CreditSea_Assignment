@@ -50,17 +50,8 @@ model Loan {
   userId        String
   application   Application   @relation(fields: [applicationId], references: [id])
   user          User          @relation(fields: [userId], references: [id])
-  transactions  Transaction[]
 }
 
-model Transaction {
-  id        String   @id @default(uuid())
-  loanId    String
-  monthYear String
-  date      DateTime @default(now())
-  amount    Float
-  loan      Loan     @relation(fields: [loanId], references: [id])
-}
 
 model Stats {
   id            String   @id @default(uuid())

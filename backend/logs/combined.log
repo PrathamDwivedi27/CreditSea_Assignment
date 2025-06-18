@@ -94,3 +94,95 @@ Unique constraint failed on the fields: (`phone`)
 2025-06-18T17:39:39.262Z [INFO]: Fetched 1 loans for user 19be4c27-aefc-412e-89ff-148b84138981
 2025-06-18T17:39:39.263Z [DEBUG]: Loans data:
 2025-06-18T17:43:10.466Z [INFO]: Server is running on port 4000
+2025-06-18T17:43:24.478Z [INFO]: Server is running on port 4000
+2025-06-18T17:43:47.160Z [INFO]: Fetched 1 loans for user 19be4c27-aefc-412e-89ff-148b84138981
+2025-06-18T17:43:47.163Z [DEBUG]: Loans data:
+2025-06-18T17:44:11.549Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T17:44:11.551Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T17:44:12.138Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T17:44:12.145Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T17:44:12.256Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T17:44:12.537Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T17:45:46.242Z [DEBUG]: [AdminService] Fetching all users
+2025-06-18T17:45:46.246Z [DEBUG]: [AdminRepository] Fetching all users
+2025-06-18T17:45:46.543Z [DEBUG]: [AdminService] Fetching all users
+2025-06-18T17:45:46.628Z [DEBUG]: [AdminRepository] Fetching all users
+2025-06-18T17:47:07.783Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T17:47:07.785Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T17:47:08.098Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T17:47:36.301Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T17:47:36.302Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T17:47:36.613Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T17:56:42.700Z [INFO]: Fetched 1 loans for user 19be4c27-aefc-412e-89ff-148b84138981
+2025-06-18T17:56:42.701Z [DEBUG]: Loans data:
+2025-06-18T17:56:43.090Z [INFO]: Fetched 1 loans for user 19be4c27-aefc-412e-89ff-148b84138981
+2025-06-18T17:56:43.091Z [DEBUG]: Loans data:
+2025-06-18T18:08:21.035Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T18:08:21.036Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T18:08:21.613Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T18:08:21.615Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T18:08:21.755Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:08:22.028Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:11:50.638Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T18:11:50.638Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T18:11:51.288Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:15:08.450Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T18:15:08.450Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T18:15:09.130Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:15:57.237Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T18:15:57.239Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T18:15:57.548Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:20:26.799Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T18:20:26.801Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T18:20:27.620Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T18:23:43.686Z [INFO]: Shutting down server...

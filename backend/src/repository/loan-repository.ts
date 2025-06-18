@@ -46,7 +46,6 @@ class LoanRepository {
     try {
       return await prisma.loan.findUnique({
         where: { id: loanId },
-        include: { transactions: true },
       });
     } catch (error) {
       logger.error(`[LoanRepository] Error fetching loan details for ${loanId}:`, error);
@@ -59,7 +58,6 @@ class LoanRepository {
       return await prisma.loan.findMany({
         where: { userId },
         include: {
-          transactions: true,
           application: true,
         },
       });
