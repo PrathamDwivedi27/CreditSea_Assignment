@@ -122,7 +122,7 @@ export default function GetLoan() {
       onCheckedChange={(checked) => handleCheckboxChange("agreeTerms", checked)}
     />
     <label className="leading-snug">
-      I accept the{" "}
+      I have read the important information and agree to the{" "}
       <span className="text-green-600 underline">terms and conditions</span>
     </label>
   </div>
@@ -133,16 +133,17 @@ export default function GetLoan() {
       onCheckedChange={(checked) => handleCheckboxChange("agreeCreditInfo", checked)}
     />
     <label className="leading-snug">
-      I consent to my credit information being shared with financial institutions.
+      Any personal and credit information may be disclosed from time to time to financial institutions, credit bureaus, and other third parties as necessary for the purpose of processing this application and managing the loan.
+      <span className="text-green-600 underline">Learn more</span>
     </label>
   </div>
 </div>
 
 
-              <div className="flex items-start space-x-2 text-sm text-gray-600 md:col-span-2">
+              {/* <div className="flex items-start space-x-2 text-sm text-gray-600 md:col-span-2">
                 <Checkbox checked={formData.agreeCreditInfo} onCheckedChange={(checked) => handleCheckboxChange("agreeCreditInfo", checked)} />
                 <label>I consent to my credit information being shared with financial institutions.</label>
-              </div>
+              </div> */}
 
               <Button type="submit" disabled={loading} className="md:col-span-2 w-full bg-green-600 text-white hover:bg-green-700 py-2 rounded-lg transition">
                 {loading ? "Submitting..." : "Apply Now"}
