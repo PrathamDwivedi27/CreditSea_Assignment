@@ -12,7 +12,7 @@ export default function Navbar({ setSidebarOpen }) {
       <button className="md:hidden" onClick={() => setSidebarOpen(true)}>
         <Menu size={24} className="text-green-700" />
       </button>
-      <div className="text-lg font-bold text-green-700">CREDIT APP</div>
+      <div className="text-lg font-bold text-green-700">CREDIT Sea</div>
       <div className="flex space-x-6 text-gray-600 items-center relative">
         {/* Home Button */}
         <Home
@@ -45,7 +45,7 @@ export default function Navbar({ setSidebarOpen }) {
               >
                 Profile
               </button>
-              <button
+              {/* <button
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
                 onClick={() => {
                   router.push("/dashboard/admin/manage-users");
@@ -53,7 +53,7 @@ export default function Navbar({ setSidebarOpen }) {
                 }}
               >
                 Manage Users
-              </button>
+              </button> */}
             </div>
           )}
         </div>
