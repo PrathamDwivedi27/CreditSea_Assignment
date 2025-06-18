@@ -256,3 +256,10 @@ Unique constraint failed on the fields: (`phone`)
         Total Disbursed Cash: 20,
         Total Savings: 4.8,
         Repaid Loans Count: 0
+2025-06-18T19:31:14.566Z [INFO]: [LoanRepository] Computed statistics:
+        Total Loans: 1,
+        Total Users: 3,
+        Total Disbursed Cash: 20,
+        Total Savings: 4.8,
+        Repaid Loans Count: 0
+2025-06-18T19:55:54.986Z [INFO]: Shutting down server...
