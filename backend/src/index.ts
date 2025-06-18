@@ -5,6 +5,8 @@ import cors from 'cors';
 import { PORT } from './config/server-config';
 import logger from './utils/logger';
 import apiRoutes from './routes/index';
+import cron from 'node-cron';
+import axios from 'axios';
 
 
 const app=express();
@@ -17,6 +19,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.send('Welcome to the Credit Sea Assignment. This is the backend server.');
 })
+
+cron.schedule("*/13 * * * *", async () => {
+  try {
+    const response = await axios.get("https://credit-sea-assignment-seven.vercel.app");
+    console.log("Cron job executed: ", response.data);
+  } catch (error) {
+    console.error("Error in cron job request:");
+  }
+});
+
 
 app.use('/api', apiRoutes);
 
