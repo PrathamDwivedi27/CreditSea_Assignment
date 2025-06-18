@@ -4,6 +4,7 @@ import cors from 'cors';
 
 import { PORT } from './config/server-config';
 import logger from './utils/logger';
+import apiRoutes from './routes/index';
 
 
 const app=express();
@@ -12,6 +13,8 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/api', apiRoutes);
 
 
 const setup_and_start_server=()=>{
