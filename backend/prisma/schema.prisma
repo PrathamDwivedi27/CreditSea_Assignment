@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                   String        @id @default(uuid())
+  name                 String
+  email                String        @unique
+  phone                String        @unique
+  password             String
+  role                 UserRole      @default(USER)
+  approvedApplications Application[] @relation("ApprovedBy")
+  applications         Application[]
+  verifiedApplications Application[] @relation("VerifiedBy")
+  loans                Loan[]
+}
+
+model Application {
+  id         String   @id @default(uuid())
+  userId     String
+  status     String   @default("PENDING")
+  tenure     Int
+  amount     Float
+  empStatus  String
+  reason     String?
+  empAddress String?
+  dateTime   DateTime @default(now())
+  updatedOn  DateTime @updatedAt
+  verifierId String?
+  adminId    String?
+  approvedBy User?    @relation("ApprovedBy", fields: [adminId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+  verifiedBy User?    @relation("VerifiedBy", fields: [verifierId], references: [id])
+  loan       Loan?
+}
+
+model Loan {
+  id            String        @id @default(uuid())
+  applicationId String        @unique
+  approvalDate  DateTime      @default(now())
+  interestRate  Float
+  principalLeft Float
+  tenureMonths  Int
+  isPaid        Boolean       @default(false)
+  emi           Float
+  userId        String
+  application   Application   @relation(fields: [applicationId], references: [id])
+  user          User          @relation(fields: [userId], references: [id])
+  transactions  Transaction[]
+}
+
+model Transaction {
+  id        String   @id @default(uuid())
+  loanId    String
+  monthYear String
+  date      DateTime @default(now())
+  amount    Float
+  loan      Loan     @relation(fields: [loanId], references: [id])
+}
+
+model Stats {
+  id            String   @id @default(uuid())
+  liveUsers     Int
+  borrowers     Int
+  cashDisbursed Float
+  savings       Float
+  repaidLoans   Int
+  cashReceived  Float
+  updatedOn     DateTime @updatedAt
+}
+
+enum UserRole {
+  ADMIN
+  VERIFIER
+  USER
+  SUPER_ADMIN
+}
