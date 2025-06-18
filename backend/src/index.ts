@@ -10,7 +10,12 @@ import axios from 'axios';
 
 
 const app=express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://credit-sea-assignment-seven.vercel.app",
+    credentials: true,
+  })
+);
 
 
 app.use(bodyParser.json());
