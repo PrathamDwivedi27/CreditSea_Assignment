@@ -70,153 +70,74 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-green-400 to-green-700">
-      <Header />
-      <div className="flex justify-center items-center min-h-[calc(100vh-4rem)]">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="w-full max-w-md"
-        >
-          <Card className="shadow-xl bg-white/90 backdrop-blur-lg border border-white/50 rounded-xl">
-            <CardHeader>
-              <CardTitle className="text-center text-3xl font-bold text-green-700">
-                Sign Up
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name Input */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
-                >
-                  <Input
-                    placeholder="Name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="bg-white border border-gray-300 shadow-md px-4 py-2 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none transition-all"
-                  />
-                </motion.div>
+    <div className="min-h-screen bg-gradient-to-r flex">
+  {/* Left Side - Form & Credentials */}
+  <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full max-w-md"
+    >
+      <Card className="shadow-xl bg-white/90 backdrop-blur-lg border border-white/50 rounded-xl">
+        <CardHeader>
+          <CardTitle className="text-center text-3xl font-bold text-green-700">
+            Sign Up
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <Input name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
+            <Input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+            <Input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+            <Input type="tel" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} required />
 
-                {/* Email Input */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.4 }}
-                >
-                  <Input
-                    type="email"
-                    placeholder="Email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="bg-white border border-gray-300 shadow-md px-4 py-2 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none transition-all"
-                  />
-                </motion.div>
+            {error && <p className="text-red-500 text-sm">{error}</p>}
 
-                {/* Password Input */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.4 }}
-                >
-                  <Input
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                    className="bg-white border border-gray-300 shadow-md px-4 py-2 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none transition-all"
-                  />
-                </motion.div>
+            <Button
+              type="submit"
+              className="w-full bg-green-700 text-white hover:bg-green-600 transition-all"
+              disabled={loading}
+            >
+              {loading ? "Signing Up..." : "Sign Up"}
+            </Button>
+          </form>
 
-                {/* Phone Input */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.4 }}
-                >
-                  <Input
-                    type="tel"
-                    placeholder="Phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="bg-white border border-gray-300 shadow-md px-4 py-2 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none transition-all"
-                  />
-                </motion.div>
+          <p className="text-center text-sm text-gray-600 mt-4">
+            Already have an account?{" "}
+            <motion.span
+              className="text-green-700 cursor-pointer hover:underline"
+              whileHover={{ scale: 1.1 }}
+              onClick={() => router.push("/login")}
+            >
+              Login
+            </motion.span>
+          </p>
+        </CardContent>
+      </Card>
 
-                {/* Error Message */}
-                {error && (
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-red-500 text-sm"
-                  >
-                    {error}
-                  </motion.p>
-                )}
+      {/* Test Credentials Section */}
+      {/* <div className="bg-gray-50 px-4 py-3 rounded-lg shadow-md border border-gray-200 mt-4 w-full">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">For Testing Purposes</h3>
+        <div className="text-gray-700 space-y-1 text-sm">
+          <div><span className="font-medium text-blue-600">Admin Email:</span> pratham@gmail.com</div>
+          <div><span className="font-medium text-blue-600">Verifier Email:</span> prathamd549@gmail.com</div>
+          <div><span className="font-medium text-blue-600">Password:</span> 1234</div>
+        </div>
+      </div> */}
+    </motion.div>
+  </div>
 
-                {/* Signup Button */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    type="submit"
-                    className="w-full bg-green-700 text-white hover:bg-green-600 transition-all"
-                    disabled={loading}
-                  >
-                    {loading ? "Signing Up..." : "Sign Up"}
-                  </Button>
-                </motion.div>
-              </form>
+  {/* Right Side - Image */}
+  <div className="hidden md:flex w-1/2 items-center justify-center bg-white/10">
+    <img
+      src="/mobile.jpg" // Replace with your actual image
+      alt="Signup Illustration"
+      className="w-4/5 h-auto object-contain"
+    />
+  </div>
+</div>
 
-              {/* Login Redirect */}
-              <p className="text-center text-sm text-gray-600 mt-4">
-                Already have an account?{" "}
-                <motion.span
-                  className="text-green-700 cursor-pointer hover:underline"
-                  whileHover={{ scale: 1.1 }}
-                  onClick={() => router.push("/login")}
-                >
-                  Login
-                </motion.span>
-              </p>
-            </CardContent>
-          </Card>
-          <div className="bg-gray-50 px-2 rounded-lg shadow-md border border-gray-200 mt-2">
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
-              For Testing Purposes
-            </h3>
-            <div className="text-gray-700 space-y-2">
-            
-              <div>
-                <span className="font-medium text-blue-600">Admin Email:</span>{" "}
-                pratham@gmail.com
-              </div>
-              <div>
-                <span className="font-medium text-blue-600">
-                  Verifier Email:
-                </span>{" "}
-                prathamd549@gmail.com
-              </div>
-              <div>
-                <span className="font-medium text-blue-600">Password:</span>{" "}
-                1234
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </div>
+
   );
 }
