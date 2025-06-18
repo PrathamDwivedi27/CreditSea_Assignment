@@ -117,13 +117,12 @@ export default function UserDashboard() {
       Borrow Cash
     </button>
     <button
-      onClick={() => router.push("/dashboard/user/transact")}
       className="px-6 py-2 font-semibold focus:outline-none bg-white text-black border-r border-gray-300 hover:bg-gray-100"
     >
       Transact
     </button>
     <button
-      onClick={() => router.push("/dashboard/user/deposit")}
+      
       className="px-6 py-2 font-semibold focus:outline-none bg-white text-black hover:bg-gray-100"
     >
       Deposit Cash
