@@ -193,6 +193,28 @@ export default function Signup() {
               </p>
             </CardContent>
           </Card>
+          <div className="bg-gray-50 px-2 rounded-lg shadow-md border border-gray-200 mt-2">
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+              For Testing Purposes
+            </h3>
+            <div className="text-gray-700 space-y-2">
+            
+              <div>
+                <span className="font-medium text-blue-600">Admin Email:</span>{" "}
+                pratham@gmail.com
+              </div>
+              <div>
+                <span className="font-medium text-blue-600">
+                  Verifier Email:
+                </span>{" "}
+                prathamd549@gmail.com
+              </div>
+              <div>
+                <span className="font-medium text-blue-600">Password:</span>{" "}
+                1234
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>

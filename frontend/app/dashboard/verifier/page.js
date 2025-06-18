@@ -3,10 +3,24 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Bell, MessageCircle, User, List, Menu, X, Home, IndianRupee } from "lucide-react";
+import { Bell, User, List, Menu, X, Home, IndianRupee } from "lucide-react";
 import VerifierProtectedRoute from "@/components/ui/VerifierProtectedRoute.js";
 import StatsCard from "@/components/ui/StatsCard.js";
 import { useRouter } from "next/navigation";
+import {
+  LayoutDashboard,
+  Users,
+  Banknote,
+  CheckCircle,
+  Scale,
+  CreditCard,
+  BarChart2,
+  FileText,
+  Settings2,
+  PiggyBank,
+  ReceiptText,
+  LogOut,
+} from "lucide-react";
 
 export default function VerifierDashboard() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -14,7 +28,6 @@ export default function VerifierDashboard() {
   const [stats, setStats] = useState({});
   const router = useRouter();
 
-  // Fetch applications from API
   useEffect(() => {
     const fetchApplications = async () => {
       const userToken = localStorage.getItem("userToken");
@@ -38,7 +51,6 @@ export default function VerifierDashboard() {
     fetchApplications();
   }, []);
 
-  // Handle Verify & Reject actions
   const handleStatusUpdate = async (id, action) => {
     const userToken = localStorage.getItem("userToken");
     if (!userToken) return;
@@ -55,14 +67,9 @@ export default function VerifierDashboard() {
       });
 
       if (response.ok) {
-        setApplications((prevApplications) =>
-          prevApplications.map((app) =>
-            app.id === id
-              ? {
-                  ...app,
-                  status: action === "verify" ? "VERIFIED" : "REJECTED",
-                }
-              : app
+        setApplications((prev) =>
+          prev.map((app) =>
+            app.id === id ? { ...app, status: action === "verify" ? "VERIFIED" : "REJECTED" } : app
           )
         );
       } else {
@@ -76,19 +83,10 @@ export default function VerifierDashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/loan/get-stats`
-        );
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/loan/get-stats`);
         const data = await response.json();
         if (response.ok) {
-          setStats({
-            totalLoans: data.totalLoans,
-            totalUsers: data.totalUsers,
-            totalDisbursedCash: data.totalDisbursedCash,
-            totalSavings: data.totalSavings,
-            repaidLoansCount: data.repaidLoansCount,
-            totalCashReceived: data.totalCashReceived,
-          });
+          setStats(data);
         } else {
           console.error("Error fetching stats:", data.message);
         }
@@ -100,14 +98,28 @@ export default function VerifierDashboard() {
     fetchStats();
   }, []);
 
+  const sidebarItems = [
+    { name: "Dashboard", icon: <LayoutDashboard className="w-5 h-5" /> },
+    { name: "Borrowers", icon: <Users className="w-5 h-5" /> },
+    { name: "Loans", icon: <Banknote className="w-5 h-5" /> },
+    { name: "Repayments", icon: <CheckCircle className="w-5 h-5" /> },
+    { name: "Loan Parameters", icon: <Scale className="w-5 h-5" /> },
+    { name: "Accounting", icon: <CreditCard className="w-5 h-5" /> },
+    { name: "Reports", icon: <BarChart2 className="w-5 h-5" /> },
+    { name: "Collateral", icon: <FileText className="w-5 h-5" /> },
+    { name: "Access Configuration", icon: <Settings2 className="w-5 h-5" /> },
+    { name: "Savings", icon: <PiggyBank className="w-5 h-5" /> },
+    { name: "Expenses", icon: <ReceiptText className="w-5 h-5" /> },
+  ];
+
   return (
     <VerifierProtectedRoute>
-      <div className="flex h-screen bg-gray-100">
+      <div className="flex h-screen bg-gray-100 overflow-hidden">
         {/* Sidebar */}
         <aside
-          className={`fixed md:static top-0 left-0 h-screen w-64 bg-green-900 text-white p-5 transition-transform ${
+          className={`fixed md:static top-0 left-0 h-screen w-64 bg-green-900 text-white p-5 transition-transform duration-300 z-50 overflow-y-auto scrollbar-hide ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } md:translate-x-0 md:block z-50`}
+          } md:translate-x-0 md:block`}
         >
           <button
             className="md:hidden absolute top-4 right-4 text-white"
@@ -121,21 +133,14 @@ export default function VerifierDashboard() {
             <p className="text-lg font-semibold">John Okoh</p>
           </div>
 
-          <nav className="space-y-4">
-            {[
-              "Dashboard(Dummy)",
-              "Borrowers(Dummy)",
-              "Loans(Dummy)",
-              "Repayments(Dummy)",
-              "Reports(Dummy)",
-              "Settings(Dummy)",
-            ].map((item) => (
+          <nav className="space-y-3">
+            {sidebarItems.map((item) => (
               <div
-                key={item}
-                className="flex items-center space-x-3 cursor-pointer hover:bg-green-700 px-3 py-2 rounded-md"
+                key={item.name}
+                className="flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-green-700 cursor-pointer"
               >
-                <List />
-                <span>{item}</span>
+                {item.icon}
+                <span className="text-sm">{item.name}</span>
               </div>
             ))}
             <button
@@ -146,7 +151,8 @@ export default function VerifierDashboard() {
                 router.push("/");
               }}
             >
-              🚪 <span>Sign Out</span>
+              <LogOut className="w-5 h-5" />
+              <span className="text-sm">Sign Out</span>
             </button>
           </nav>
         </aside>
@@ -172,50 +178,20 @@ export default function VerifierDashboard() {
           </nav>
 
           {/* Dashboard Overview */}
-          <h2 className="text-gray-600 font-semibold mb-4">
-            Dashboard &gt; Loans
-          </h2>
+          <h2 className="text-gray-600 font-semibold mb-4">Dashboard &gt; Loans</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <StatsCard
-              icon={List}
-              value={stats.totalLoans}
-              label="Total Loans"
-            />
-            <StatsCard
-              icon={User}
-              value={stats.totalUsers}
-              label="Total Users"
-            />
-            <StatsCard
-              icon={IndianRupee}
-              value={stats.totalDisbursedCash}
-              label="Total Disbursed Cash"
-            />
-            <StatsCard
-              icon={IndianRupee}
-              value={Math.abs(stats.totalSavings)}
-              label="Total Savings"
-            />
-            <StatsCard
-              icon={Bell}
-              value={stats.repaidLoansCount}
-              label="Repaid Loans"
-            />
-            <StatsCard
-              icon={IndianRupee}
-              value={stats.totalCashReceived}
-              label="Total Cash Received"
-            />
+            <StatsCard icon={List} value={stats.totalLoans} label="Total Loans" />
+            <StatsCard icon={User} value={stats.totalUsers} label="Total Users" />
+            <StatsCard icon={IndianRupee} value={stats.totalDisbursedCash} label="Total Disbursed Cash" />
+            <StatsCard icon={IndianRupee} value={Math.abs(stats.totalSavings)} label="Total Savings" />
+            <StatsCard icon={Bell} value={stats.repaidLoansCount} label="Repaid Loans" />
+            <StatsCard icon={IndianRupee} value={stats.totalCashReceived} label="Total Cash Received" />
           </div>
 
           {/* Loan Applications Table */}
           <Card className="mt-8 shadow-lg">
             <CardContent>
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">
-                Loan Applications
-              </h2>
-
-              {/* Table Header */}
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">Loan Applications</h2>
               <div className="grid grid-cols-5 text-gray-500 text-sm font-semibold border-b pb-2 text-center">
                 <p>Name</p>
                 <p>Amount</p>
@@ -223,8 +199,6 @@ export default function VerifierDashboard() {
                 <p>Status</p>
                 <p>Action</p>
               </div>
-
-              {/* Applications List */}
               {applications.length > 0 ? (
                 applications.map((application) => (
                   <motion.div
@@ -234,9 +208,7 @@ export default function VerifierDashboard() {
                     transition={{ duration: 0.3 }}
                     className="grid grid-cols-5 items-center py-4 border-b text-center"
                   >
-                    <p className="font-medium truncate">
-                      {application.user.name}
-                    </p>
+                    <p className="font-medium truncate">{application.user.name}</p>
                     <p className="text-gray-700">₹{application.amount}</p>
                     <p className="text-gray-700">{application.tenure} months</p>
                     <span
@@ -255,17 +227,13 @@ export default function VerifierDashboard() {
                         <>
                           <button
                             className="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700"
-                            onClick={() =>
-                              handleStatusUpdate(application.id, "verify")
-                            }
+                            onClick={() => handleStatusUpdate(application.id, "verify")}
                           >
                             ✅ Verify
                           </button>
                           <button
                             className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700"
-                            onClick={() =>
-                              handleStatusUpdate(application.id, "reject")
-                            }
+                            onClick={() => handleStatusUpdate(application.id, "reject")}
                           >
                             ❌ Reject
                           </button>
@@ -275,9 +243,7 @@ export default function VerifierDashboard() {
                   </motion.div>
                 ))
               ) : (
-                <p className="text-gray-500 text-center py-4">
-                  No applications found.
-                </p>
+                <p className="text-gray-500 text-center py-4">No applications found.</p>
               )}
             </CardContent>
           </Card>
