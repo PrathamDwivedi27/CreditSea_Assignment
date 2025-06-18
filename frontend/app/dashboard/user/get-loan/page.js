@@ -114,10 +114,30 @@ export default function GetLoan() {
               <Textarea name="reason" placeholder="Reason for Loan" value={formData.reason} onChange={handleChange} required className="md:col-span-2" />
 
               {/* Checkboxes full-width */}
-              <div className="flex items-start space-x-2 text-sm text-gray-600 md:col-span-2">
-                <Checkbox checked={formData.agreeTerms} onCheckedChange={(checked) => handleCheckboxChange("agreeTerms", checked)} />
-                <label>I accept the <span className="text-green-600 underline">terms and conditions</span></label>
-              </div>
+             {/* Checkboxes side by side */}
+<div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div className="flex items-start space-x-2 text-sm text-gray-600">
+    <Checkbox
+      checked={formData.agreeTerms}
+      onCheckedChange={(checked) => handleCheckboxChange("agreeTerms", checked)}
+    />
+    <label className="leading-snug">
+      I accept the{" "}
+      <span className="text-green-600 underline">terms and conditions</span>
+    </label>
+  </div>
+
+  <div className="flex items-start space-x-2 text-sm text-gray-600">
+    <Checkbox
+      checked={formData.agreeCreditInfo}
+      onCheckedChange={(checked) => handleCheckboxChange("agreeCreditInfo", checked)}
+    />
+    <label className="leading-snug">
+      I consent to my credit information being shared with financial institutions.
+    </label>
+  </div>
+</div>
+
 
               <div className="flex items-start space-x-2 text-sm text-gray-600 md:col-span-2">
                 <Checkbox checked={formData.agreeCreditInfo} onCheckedChange={(checked) => handleCheckboxChange("agreeCreditInfo", checked)} />
@@ -136,7 +156,7 @@ export default function GetLoan() {
     <img
       src="/graph.webp" // update the path if hosted somewhere else
       alt="Loan Trends"
-      className="max-h-[200px] w-auto object-contain"
+      className="max-h-[400px] w-auto object-contain"
     />
   </div>
 </div>
