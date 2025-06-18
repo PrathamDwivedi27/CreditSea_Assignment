@@ -101,6 +101,13 @@ class LoanRepository {
         totalSavings += (loan.principalLeft * loan.interestRate * loan.tenureMonths) / 100;
       });
 
+      logger.info(`[LoanRepository] Computed statistics:
+        Total Loans: ${totalLoans},
+        Total Users: ${totalUsers},
+        Total Disbursed Cash: ${disbursedCash._sum.amount ?? 0},
+        Total Savings: ${totalSavings},
+        Repaid Loans Count: ${repaidLoans}`);
+
       return {
         totalLoans,
         totalUsers,

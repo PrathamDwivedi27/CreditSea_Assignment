@@ -14,3 +14,83 @@
 2025-06-18T14:51:30.040Z [INFO]: Server is running on port 4000
 2025-06-18T14:51:33.102Z [INFO]: Server is running on port 4000
 2025-06-18T14:52:25.044Z [INFO]: Server is running on port 4000
+2025-06-18T14:52:43.761Z [INFO]: Server is running on port 4000
+2025-06-18T14:52:53.926Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T14:52:54.101Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T14:54:18.337Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T14:54:18.344Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T15:04:33.963Z [ERROR]: getUserLoans failed Cannot read properties of undefined (reading 'getUserLoans')
+2025-06-18T15:04:33.986Z [ERROR]: getUserLoans failed Cannot read properties of undefined (reading 'getUserLoans')
+2025-06-18T15:05:21.406Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T15:05:21.415Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T15:10:48.215Z [ERROR]: Registration Error: 
+Invalid `prisma.user.create()` invocation in
+E:\VS-CODE\Tasks\CreditSeaAssignment\backend\src\controller\authController.ts:28:36
+
+  25 const hashedPassword = await bcrypt.hash(password, 10);
+  26 
+  27 // Create user
+→ 28 const user = await prisma.user.create(
+Unique constraint failed on the fields: (`phone`)
+2025-06-18T15:11:02.050Z [ERROR]: Registration Error: 
+Invalid `prisma.user.create()` invocation in
+E:\VS-CODE\Tasks\CreditSeaAssignment\backend\src\controller\authController.ts:28:36
+
+  25 const hashedPassword = await bcrypt.hash(password, 10);
+  26 
+  27 // Create user
+→ 28 const user = await prisma.user.create(
+Unique constraint failed on the fields: (`phone`)
+2025-06-18T15:13:19.531Z [ERROR]: getLoanStatistics failed Cannot read properties of undefined (reading 'getLoanStats')
+2025-06-18T15:13:19.538Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T15:13:19.539Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T15:13:19.549Z [ERROR]: getLoanStatistics failed Cannot read properties of undefined (reading 'getLoanStats')
+2025-06-18T15:13:20.349Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T15:13:20.351Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T15:13:24.397Z [DEBUG]: [AdminService] Processing application 1256db47-a5ca-47f4-b6b7-ba5a94d7843b with status APPROVED
+2025-06-18T15:13:24.398Z [DEBUG]: [AdminRepository] Finding application with ID: 1256db47-a5ca-47f4-b6b7-ba5a94d7843b
+2025-06-18T15:13:24.821Z [DEBUG]: [AdminRepository] Updating application 1256db47-a5ca-47f4-b6b7-ba5a94d7843b to status APPROVED
+2025-06-18T15:13:25.999Z [ERROR]: approveAndCreateLoan failed Cannot read properties of undefined (reading 'approveAndCreateLoan')
+2025-06-18T15:14:14.506Z [ERROR]: getLoanStatistics failed Cannot read properties of undefined (reading 'getLoanStats')
+2025-06-18T15:14:14.513Z [ERROR]: getLoanStatistics failed Cannot read properties of undefined (reading 'getLoanStats')
+2025-06-18T15:17:49.463Z [INFO]: Server is running on port 4000
+2025-06-18T15:17:52.565Z [INFO]: Server is running on port 4000
+2025-06-18T15:17:56.562Z [INFO]: Server is running on port 4000
+2025-06-18T15:18:01.456Z [INFO]: Server is running on port 4000
+2025-06-18T15:18:05.125Z [INFO]: Server is running on port 4000
+2025-06-18T15:18:09.724Z [INFO]: Server is running on port 4000
+2025-06-18T15:18:14.073Z [INFO]: Server is running on port 4000
+2025-06-18T15:18:21.204Z [INFO]: Server is running on port 4000
+2025-06-18T15:18:25.527Z [INFO]: Server is running on port 4000
+2025-06-18T15:18:41.935Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T15:18:41.936Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T15:18:42.568Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T15:18:42.569Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T17:29:19.170Z [INFO]: Server is running on port 4000
+2025-06-18T17:29:23.674Z [INFO]: Server is running on port 4000
+2025-06-18T17:29:25.554Z [INFO]: Server is running on port 4000
+2025-06-18T17:29:26.976Z [INFO]: Server is running on port 4000
+2025-06-18T17:29:31.599Z [INFO]: Server is running on port 4000
+2025-06-18T17:29:37.926Z [INFO]: Fetched 0 loans for user 19be4c27-aefc-412e-89ff-148b84138981
+2025-06-18T17:29:37.928Z [DEBUG]: Loans data:
+2025-06-18T17:34:02.747Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T17:34:02.749Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T17:34:03.436Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T17:34:03.438Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T17:34:08.581Z [DEBUG]: [AdminService] Processing application d066e842-8511-4bb0-9021-d991de6b530d with status APPROVED
+2025-06-18T17:34:08.584Z [DEBUG]: [AdminRepository] Finding application with ID: d066e842-8511-4bb0-9021-d991de6b530d
+2025-06-18T17:34:08.839Z [DEBUG]: [AdminRepository] Updating application d066e842-8511-4bb0-9021-d991de6b530d to status APPROVED
+2025-06-18T17:34:09.285Z [DEBUG]: [LoanRepository] Fetching application d066e842-8511-4bb0-9021-d991de6b530d
+2025-06-18T17:34:09.561Z [INFO]: [LoanRepository] Approving application d066e842-8511-4bb0-9021-d991de6b530d
+2025-06-18T17:34:10.055Z [INFO]: [LoanRepository] Creating loan for user 19be4c27-aefc-412e-89ff-148b84138981
+2025-06-18T17:34:16.083Z [DEBUG]: [AdminService] Fetching all applications
+2025-06-18T17:34:16.083Z [DEBUG]: [AdminRepository] Fetching all applications
+2025-06-18T17:38:18.254Z [INFO]: Fetched 1 loans for user 19be4c27-aefc-412e-89ff-148b84138981
+2025-06-18T17:38:18.257Z [DEBUG]: Loans data:
+2025-06-18T17:38:18.735Z [INFO]: Fetched 1 loans for user 19be4c27-aefc-412e-89ff-148b84138981
+2025-06-18T17:38:18.736Z [DEBUG]: Loans data:
+2025-06-18T17:39:17.687Z [INFO]: Fetched 1 loans for user 19be4c27-aefc-412e-89ff-148b84138981
+2025-06-18T17:39:17.688Z [DEBUG]: Loans data:
+2025-06-18T17:39:39.262Z [INFO]: Fetched 1 loans for user 19be4c27-aefc-412e-89ff-148b84138981
+2025-06-18T17:39:39.263Z [DEBUG]: Loans data:
+2025-06-18T17:43:10.466Z [INFO]: Server is running on port 4000

@@ -12,8 +12,7 @@ const approveAndCreateLoan = async (req: Request, res: Response, next: NextFunct
 
     if (!adminId) return res.status(401).json({ message: "Unauthorized" });
 
-    const service = req.app.get("loanService") as LoanService;
-    const loan = await service.approveAndCreateLoan(appId, adminId);
+    const loan = await loanService.approveAndCreateLoan(appId, adminId);
 
     res.status(201).json({ message: "Loan Approved & Created", loan });
   } catch (error) {
@@ -25,8 +24,7 @@ const approveAndCreateLoan = async (req: Request, res: Response, next: NextFunct
 const getLoanDetails = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { loanId } = req.params;
-    const service = req.app.get("loanService") as LoanService;
-    const loan = await service.getLoanDetails(loanId);
+    const loan = await loanService.getLoanDetails(loanId);
 
     if (!loan) return res.status(404).json({ message: "Loan not found" });
     res.status(200).json(loan);
@@ -41,8 +39,9 @@ const getUserLoans = async (req: Request, res: Response, next: NextFunction) => 
     const userId = (req as any).user?.userId;
     if (!userId) return res.status(401).json({ message: "Unauthorized" });
 
-    const service = req.app.get("loanService") as LoanService;
-    const loans = await service.getUserLoans(userId);
+    const loans = await loanService.getUserLoans(userId);
+    logger.info(`Fetched ${loans.length} loans for user ${userId}`);
+    logger.debug("Loans data:", loans);
 
     if (!loans.length) return res.status(404).json({ message: "No loans found" });
     res.status(200).json({ message: "User loans fetched", loans });
@@ -57,8 +56,7 @@ const getUserTotalLoanAmount = async (req: Request, res: Response, next: NextFun
     const userId = (req as any).user?.userId;
     if (!userId) return res.status(401).json({ message: "Unauthorized" });
 
-    const service = req.app.get("loanService") as LoanService;
-    const totalAmount = await service.getUserTotalLoan(userId);
+    const totalAmount = await loanService.getUserTotalLoan(userId);
 
     res.status(200).json({ message: "Total loan calculated", totalAmount });
   } catch (error) {
@@ -69,8 +67,7 @@ const getUserTotalLoanAmount = async (req: Request, res: Response, next: NextFun
 
 const getLoanStatistics = async (_req: Request, res: Response, next: NextFunction) => {
   try {
-    const service = res.app.get("loanService") as LoanService;
-    const stats = await service.getLoanStats();
+    const stats = await loanService.getLoanStats();
     res.status(200).json({ message: "Statistics retrieved", ...stats });
   } catch (error) {
     logger.error("getLoanStatistics failed", error);

@@ -1,0 +1,31 @@
+2025-06-18T14:52:53.926Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T14:52:54.101Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T14:54:18.337Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T14:54:18.344Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T15:04:33.963Z [ERROR]: getUserLoans failed Cannot read properties of undefined (reading 'getUserLoans')
+2025-06-18T15:04:33.986Z [ERROR]: getUserLoans failed Cannot read properties of undefined (reading 'getUserLoans')
+2025-06-18T15:05:21.406Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T15:05:21.415Z [ERROR]: getUserTotalLoanAmount failed Cannot read properties of undefined (reading 'getUserTotalLoan')
+2025-06-18T15:10:48.215Z [ERROR]: Registration Error: 
+Invalid `prisma.user.create()` invocation in
+E:\VS-CODE\Tasks\CreditSeaAssignment\backend\src\controller\authController.ts:28:36
+
+  25 const hashedPassword = await bcrypt.hash(password, 10);
+  26 
+  27 // Create user
+→ 28 const user = await prisma.user.create(
+Unique constraint failed on the fields: (`phone`)
+2025-06-18T15:11:02.050Z [ERROR]: Registration Error: 
+Invalid `prisma.user.create()` invocation in
+E:\VS-CODE\Tasks\CreditSeaAssignment\backend\src\controller\authController.ts:28:36
+
+  25 const hashedPassword = await bcrypt.hash(password, 10);
+  26 
+  27 // Create user
+→ 28 const user = await prisma.user.create(
+Unique constraint failed on the fields: (`phone`)
+2025-06-18T15:13:19.531Z [ERROR]: getLoanStatistics failed Cannot read properties of undefined (reading 'getLoanStats')
+2025-06-18T15:13:19.549Z [ERROR]: getLoanStatistics failed Cannot read properties of undefined (reading 'getLoanStats')
+2025-06-18T15:13:25.999Z [ERROR]: approveAndCreateLoan failed Cannot read properties of undefined (reading 'approveAndCreateLoan')
+2025-06-18T15:14:14.506Z [ERROR]: getLoanStatistics failed Cannot read properties of undefined (reading 'getLoanStats')
+2025-06-18T15:14:14.513Z [ERROR]: getLoanStatistics failed Cannot read properties of undefined (reading 'getLoanStats')
