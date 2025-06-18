@@ -130,7 +130,7 @@ export default function VerifierDashboard() {
 
           <div className="flex items-center space-x-3 mb-8">
             <div className="bg-gray-200 w-12 h-12 rounded-full"></div>
-            <p className="text-lg font-semibold">John Okoh</p>
+            <p className="text-lg font-semibold">Klein Moretti</p>
           </div>
 
           <nav className="space-y-3">
@@ -164,7 +164,7 @@ export default function VerifierDashboard() {
             <button className="md:hidden" onClick={() => setSidebarOpen(true)}>
               <Menu size={24} className="text-green-700" />
             </button>
-            <div className="text-lg font-bold text-green-700">CREDIT APP</div>
+            <div className="text-lg font-bold text-green-700">CREDIT Sea</div>
             <div className="flex space-x-6 text-gray-600">
               <Home
                 onClick={() => router.push("/dashboard/verifier")}

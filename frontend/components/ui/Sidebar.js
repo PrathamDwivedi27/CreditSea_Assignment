@@ -55,7 +55,7 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
       {/* Admin Profile */}
       <div className="flex items-center space-x-3 mb-8">
         <div className="bg-gray-300 w-12 h-12 rounded-full"></div>
-        <p className="text-lg font-semibold">Klein Moretti</p>
+        <p className="text-lg font-semibold">Mr Fool</p>
       </div>
 
       {/* Navigation */}
