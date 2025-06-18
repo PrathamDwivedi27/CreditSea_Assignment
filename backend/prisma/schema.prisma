@@ -47,7 +47,6 @@ model Loan {
   principalLeft Float
   tenureMonths  Int
   isPaid        Boolean       @default(false)
-  emi           Float
   userId        String
   application   Application   @relation(fields: [applicationId], references: [id])
   user          User          @relation(fields: [userId], references: [id])
