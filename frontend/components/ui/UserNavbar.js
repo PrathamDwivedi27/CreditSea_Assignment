@@ -18,7 +18,7 @@ export default function Navbar() {
         onClick={() => router.push("/dashboard/user")}
         className="text-lg font-bold text-green-700 hover:cursor-pointer"
       >
-        CREDIT APP
+        CREDIT SEA
       </div>
       <div className="flex space-x-6 text-gray-600 items-center">
         <Home onClick={() => router.push("/dashboard/user")} className="cursor-pointer hover:text-green-700" />

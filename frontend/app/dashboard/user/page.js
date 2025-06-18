@@ -107,14 +107,30 @@ export default function UserDashboard() {
             </Button>
           </div>
 
-          <div className="flex justify-center mt-6">
-            <Button
-              className="bg-red-600 hover:bg-red-400 px-6 py-2"
-              onClick={() => router.push("/dashboard/user/loans")}
-            >
-              Your Current Loans
-            </Button>
-          </div>
+          {/* Tabs: Borrow Cash | Transact | Deposit Cash */}
+<div className="mt-6 flex justify-center">
+  <div className="flex shadow-md rounded-full overflow-hidden border border-gray-300">
+    <button
+      onClick={() => router.push("/dashboard/user/get-loan")}
+      className="px-6 py-2 font-semibold focus:outline-none bg-green-50 text-black border-r border-gray-300 hover:bg-green-100"
+    >
+      Borrow Cash
+    </button>
+    <button
+      onClick={() => router.push("/dashboard/user/transact")}
+      className="px-6 py-2 font-semibold focus:outline-none bg-white text-black border-r border-gray-300 hover:bg-gray-100"
+    >
+      Transact
+    </button>
+    <button
+      onClick={() => router.push("/dashboard/user/deposit")}
+      className="px-6 py-2 font-semibold focus:outline-none bg-white text-black hover:bg-gray-100"
+    >
+      Deposit Cash
+    </button>
+  </div>
+</div>
+
 
           <div className="mt-6 relative">
             <Input
