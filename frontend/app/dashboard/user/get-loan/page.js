@@ -131,11 +131,16 @@ export default function GetLoan() {
 
             {/* Chart Section */}
             <div className="mt-8">
-              <h3 className="text-lg font-semibold text-gray-700 text-center mb-4">Loan Trends</h3>
-              <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-                <Line data={chartData} options={{ responsive: true, maintainAspectRatio: false }} height={200} />
-              </div>
-            </div>
+  <h3 className="text-lg font-semibold text-gray-700 text-center mb-4">Loan Trends</h3>
+  <div className="bg-gray-100 p-4 rounded-lg shadow-md flex justify-center">
+    <img
+      src="/graph.webp" // update the path if hosted somewhere else
+      alt="Loan Trends"
+      className="max-h-[200px] w-auto object-contain"
+    />
+  </div>
+</div>
+
           </CardContent>
         </Card>
       </div>
