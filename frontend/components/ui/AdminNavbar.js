@@ -13,7 +13,7 @@ export default function Navbar({ setSidebarOpen }) {
         <Menu size={24} className="text-white" />
       </button>
       <div className="text-lg font-bold text-white">CREDIT SEA</div>
-      <div className="flex space-x-6 text-gray-600 items-center relative">
+      <div className="flex space-x-6 text-white items-center relative">
         {/* Home Button */}
         <Home
           className="cursor-pointer hover:text-white"
@@ -28,8 +28,8 @@ export default function Navbar({ setSidebarOpen }) {
             className="flex items-center space-x-1 cursor-pointer"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <User className="hover:text-white" />
-            <span>Admin</span>
+            <User className="hover:text-white text-white" />
+            <span className="text-white">Admin</span>
             <ChevronDown size={16} />
           </div>
 
